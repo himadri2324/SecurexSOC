@@ -1,6 +1,7 @@
 # 🛡️ Securex: Real-time SOC Detection of Brute Force Attack
 
 Securex is an on-premises SOC lab project that demonstrates **real-time detection of brute-force authentication attacks** on a Windows endpoint. The project simulates an attack scenarios, collects Windows Security Event logs, forwards them to **Elastic SIEM**, and generates **actionable alerts** for SOC analysts. It highlights an end-to-end SOC workflow including attack simulation, log ingestion, threat detection, alert monitoring, and initial incident response, closely aligning with **real-world Tier-1 SOC operations**.
+
 ---
 Demonstration Of Project
 
