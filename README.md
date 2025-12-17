@@ -3,9 +3,9 @@
 Securex is an on-premises SOC lab project that demonstrates **real-time detection of brute-force authentication attacks** on a Windows endpoint. The project simulates an attack scenarios, collects Windows Security Event logs, forwards them to **Elastic SIEM**, and generates **actionable alerts** for SOC analysts. It highlights an end-to-end SOC workflow including attack simulation, log ingestion, threat detection, alert monitoring, and initial incident response, closely aligning with **real-world Tier-1 SOC operations**.
 
 ---
-Demonstration Of Project
+# 🎬 Demonstration
 
-https://github.com/user-attachments/assets/a5f9313a-6395-4c26-9dda-483de2e9317d
+[![Watch Demo](https://img.youtube.com/vi/YOUR_VIDEO_ID/0.jpg)](https://github.com/user-attachments/assets/a5f9313a-6395-4c26-9dda-483de2e9317d)
 
 ---
 ## 📘 Project Overview
