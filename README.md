@@ -6,7 +6,7 @@ Securex is an on-premises SOC lab project that demonstrates **real-time detectio
 # 🎬 Demonstration
 
 <p align="center">
-  <a href="https://github.com/user-attachments/assets/a5f9313a-6395-4c26-9dda-483de2e9317d" >
+  <a href="https://github.com/user-attachments/assets/a5f9313a-6395-4c26-9dda-483de2e9317d" target="_blank" >
     <br>
   </a>
 </p>
