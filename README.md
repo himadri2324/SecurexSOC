@@ -49,8 +49,8 @@ The project utilizes a virtualized environment with core components:
     * Enabled Elastic Security detection rules for failed login attempts.
     * Prepared SOC dashboards for real-time alert visibility. 
 4.  **Attack Simulation (Windows-Powershell):**
-   * Simulated repeated failed login attempts using **PowerShell**.
-   * Generated continuous authentication failure events to mimic a brute-force attacks.
+    *  Simulated repeated failed login attempts using **PowerShell**.
+    *  Generated continuous authentication failure events to mimic a brute-force attacks.
 
 ---
 
