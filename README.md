@@ -5,7 +5,7 @@ Securex is an on-premises SOC lab project that demonstrates **real-time detectio
 ---
 # 🎬 Demonstration
 
-[![Watch Demo](https://img.youtube.com/vi/YOUR_VIDEO_ID/0.jpg)](https://github.com/user-attachments/assets/a5f9313a-6395-4c26-9dda-483de2e9317d)
+https://github.com/user-attachments/assets/a5f9313a-6395-4c26-9dda-483de2e9317d
 
 ---
 ## 📘 Project Overview
