@@ -57,7 +57,7 @@ The project is implemented in a **VMware Workstation environment** and demonstra
   <img src="https://github.com/himadri2324/Securex-soc/blob/main/Architecture-%20diagram.png?raw=true" 
        alt="Securex SOC Architecture Diagram" width="750"/>
 </p>
-* End-to-end SOC detection flow for brute-force authentication attacks
+End-to-end SOC detection flow for brute-force authentication attacks
 
 ### ⚙️ **Detailed Setup Steps**
 1.  **Environment Preparation:**
