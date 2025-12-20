@@ -56,38 +56,64 @@ The project is implemented in a **VMware Workstation environment** and demonstra
 
 
 ### ⚙️ **Detailed Setup Steps**
-1.  **Elastic Stack Deployment (Ubuntu 22.04 LTS):**
-    * Installed and configured **Elasticsearch** for log storage and indexing.
-    * Installed **Kibana** for visualization, SOC dashboards, and alert monitoring.
-    * Enabled **Elastic Security (SIEM)** features in Kibana.
-2.  **Log Collection Setup (Windows Endpoint):**
-    * Configured Windows **Advanced Security Auditing** to log authentication failures.
-    * Installed **Elastic Agent / Winlogbeat** to forward logs to Elasticsearch.
-    * Verified successful log ingestion in Kibana.
-3.  **SOC Monitoring Configuration:**
-    * Enabled Elastic Security detection rules for failed login attempts.
-    * Prepared SOC dashboards for real-time alert visibility. 
-4.  **Attack Simulation (Windows-Powershell):**
-    *  Simulated repeated failed login attempts using **PowerShell**.
-    *  Generated continuous authentication failure events to mimic a brute-force attacks.
+1.  **Environment Preparation:**
+    * Install **VMware Workstation**
+    * Create Windows and Ubuntu virtual machines
+    * Configure NAT-based networking
+2.  **Windows Security Logging:**
+    * Enable **Audit Logon Events**
+    * Generate failed login attempts
+    * Validate Event ID **4625** using Event Viewer
+3.  **Log Collection Configuration:**
+    * Install Winlogbeat / Elastic Agent on Windows
+    * Configure output to Elasticsearch
+    * Verify log ingestion in Kibana
+4.  **SIEM Setup:**
+    *  Install Elasticsearch and Kibana on Linux
+    *  Enable SIEM features
+    *  Configure brute-force detection rules
+5. **Attack Simulation:**
+    * Perform repeated failed authentication attempts
+    * Simulate credential guessing behavior
+6.  **Alert Monitoring:**
+    *  Observe alert generation in Kibana SIEM
+    *  Analyze event correlation and timelines
+7. **Documentation & Demonstration**
+    * Record live SOC workflow using OBS Studio
+    * Capture alerts and dashboards  
 
 ---
 ## 🚨 Detection and Response
 ### 🔍 **Detection**
-* **Log Ingestion:** Windows Security Event Logs capture repeated failed login attempts.
-* **Kibana Dashboard:** Authentication failure logs are visualized for correlation and analysis.
-* **Detection Rule:** Elastic Security triggers an alert when failed login attempts exceed a defined threshold within a short time window (e.g., 5 failed attempts in 2 minutes).
+* **Authentication Failures Occur:** Multiple unsuccessful login attempts are made against the Windows system.
+* **Security Events Generated:** Windows logs each failed attempt as Event ID 4625.
+* **Log Forwarding:** Winlogbeat / Elastic Agent forwards logs to Elasticsearch in real time.
+* **Correlation & Rule Evaluation:** SIEM detection rules analyze event frequency and patterns.
+* **Behavior-Based Detection:** Repeated failures within a defined time window are identified as brute-force activity.
+* **Alert Generation:** SIEM generates a brute-force authentication alert.
+* **SOC Investigation:** Analyst reviews the alert, event timeline, affected accounts, and source IPs.
 
 ### 🛠️ **Automated Response**
 Upon triggering an alert:
-* **Alert Generation:** Security alert appears in Elastic Security alerts panel.
-* **Alert Analysis:** SOC analyst reviews source IP, affected host, timestamps, and event count.
+* **Automatic Alert Creation:** SIEM triggers alerts without manual intervention.
+* **Threat Classification:** Alerts are categorized as brute-force credential access attempts.
+* **SOC Visibility:** Alerts are displayed on SIEM dashboards for investigation.
 * **Mitigation Recommendation:** Based on severity, recommended actions include IP blocking, account lockout enforcement, or policy hardening.
-> **Result:** Securex successfully detects a brute-force authentication attack in real time and provides actionable alerts, demonstrating effective SOC monitoring and incident validation.
+> **Result:** Securex successfully detects brute-force authentication attacks by correlating Windows security logs in real time, generating contextual SOC alerts and demonstrating an end-to-end SIEM detection workflow.
+
+### 🧠 **MITRE ATT&CK Mapping**
+| Tactic | Technique | ID | 
+| :--- | :--- | :--- |
+| Credential Access | **Brute Force** | T1110 |
+| Credential Access | **Password Guessing** | T1110.001 |
 
 ---
 ## 🚀 Future Enhancements
-* **Automated IP Blocking:** Implement a response action that communicates with the host firewall to automatically block the malicious IP address upon detection.
-* **Multi-Source Intelligence:** Expand the detection capabilities by integrating commercial threat feeds and internal "honeypot" data to catch more sophisticated attack vectors.
-* **Executive Dashboards:** Develop high-level Kibana visualizations to track attack trends, top targeted hosts, and the overall health of the automated response system.
-* **SOAR Integration:** Automate response actions, notifications, and remediation workflows.
+* **Implement SOAR-Based Account Lockout:** Integrating SOAR automation can automatically lock compromised accounts after repeated failed logins, reducing attacker dwell time and minimizing manual SOC intervention.
+* **Integrate Firewall or IP Blocking:** Firewall integration can enable automatic blocking of malicious source IP addresses detected during brute-force attempts, preventing further attack attempts at the network perimeter.
+* **Add Email or Messaging Alerts:** Configuring email or messaging notifications ensures SOC analysts receive immediate alerts, improving response time and enabling faster incident acknowledgment outside the SIEM console.
+* **xtend Detection to Successful Brute-Force Logins:** Detection logic can be enhanced to identify successful logins following multiple failures, indicating potential credential compromise and higher-risk security incidents.
+
+---
+## 🔚 Conclusion
+Securex demonstrates a realistic SOC detection use case by combining Windows security logging, SIEM analytics, and behavioral detection. The project reflects enterprise-grade monitoring practices and is well-suited for showcasing blue-team, SOC analyst, and SIEM engineering skills.
