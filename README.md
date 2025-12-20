@@ -53,7 +53,12 @@ The project is implemented in a **VMware Workstation environment** and demonstra
 ### 🖧 **VMware Network Topology:**
 
 ### 🏗️ **Architecture Flow Diagram:**
-![image alt](https://github.com/himadri2324/Securex-soc/blob/main/Architecture-%20diagram.png?raw=true)
+<p align="center">
+
+  ![image alt](https://github.com/himadri2324/Securex-soc/blob/main/Architecture-%20diagram.png?raw=true)
+
+</p>
+
 
 ### ⚙️ **Detailed Setup Steps**
 1.  **Environment Preparation:**
