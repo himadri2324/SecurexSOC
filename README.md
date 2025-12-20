@@ -1,5 +1,6 @@
 # 🛡️ Securex: Real-time SOC Detection of Brute Force Attack
-Securex is an on-premises SOC lab project that demonstrates **real-time detection of brute-force authentication attacks** on a Windows endpoint. The project simulates an attack scenarios, collects Windows Security Event logs, forwards them to **Elastic SIEM**, and generates **actionable alerts** for SOC analysts. It highlights an end-to-end SOC workflow including attack simulation, log ingestion, threat detection, alert monitoring, and initial incident response, closely aligning with **real-world Tier-1 SOC operations**.
+**Securex** is a Security Operations Center (SOC)–oriented lab project designed to demonstrate **real-time detection of brute-force authentication attacks** against a Windows system using **Elastic SIEM**. The project simulates repeated failed login attempts, collects Windows security telemetry, correlates authentication failures, and generates actionable alerts for SOC investigation.
+This project focuses on **detection, alerting, and analysis**, replicating how enterprise SOC teams identify credential-based attacks using log-driven security analytics.
 
 ---
 # 🎬 Demonstration
@@ -13,26 +14,46 @@ Securex is an on-premises SOC lab project that demonstrates **real-time detectio
 
 ---
 ## 📘 Project Overview
-Securex continuously monitors Windows Security Event Logs for repeated failed login attempts, correlates them with threat intelligence, and raises alerts for potential brute-force attacks. The system ensures rapid detection and response by integrating monitoring, visualization, and automated alerting.
+Brute-force attacks are a common initial access technique used by attackers to compromise systems by repeatedly guessing credentials. Securex addresses this threat by monitoring **Windows Security Event Logs**, forwarding them to a centralized SIEM platform, and applying **behavior-based detection rules**.
+The project is implemented in a **VMware Workstation environment** and demonstrates an end-to-end SOC workflow including:
+* Attack simulation
+* Log collection and ingestion
+* Detection rule evaluation
+* Alert visualization
+* Incident investigation
 
 ### 🎯 **Key Objectives:**
-* **Real-time Monitoring:** Ingest and analyze authentication logs continuously to detect suspicious login behavior immediately.
-* **Threat Intelligence Integration:** Utilize updated lists of known malicious IPs for enhanced detection accuracy.
-* **Automated Incident Response:** Send actionable alerts to SOC analysts via automated workflows, reducing manual effort.
-* **Centralized Visibility:** Provide unified dashboards in Kibana for forensic investigation and trend analysis of detected threats.
+* Simulate a real-world brute-force authentication attack
+* Enable and generate Windows authentication security logs
+* Forward logs to a centralized SIEM platform
+* Detect brute-force behavior using SIEM correlation rules
+* Generate real-time SOC alerts
+* Analyze incidents using dashboards and timelines 
 
 ---
-## 🧩 Components and Setup
-The project utilizes a virtualized environment with core components:
-| Component | Operating System | Role | Key Tools/Services |
-| :--- | :--- | :--- | :--- |
-| **VMware Workstation** | Host OS | Virtualization Platform | **VMware Workstation** |
-| **Windows Endpoint** | Windows | Target System | **Windows Security Event Logs** |
-| **Attacker Machine** | Windows | Brute-Force Attack Execution | **Powershell** |
-| **Log Collection Agent** | Windows| Log Forwarding | **Elastic Agent, Winlogbeat** |
-| **SIEM Storage Engine** | Linux | Log Storage and Indexing | **Elasticsearch** |
-| **SOC Dashboard** | Linux | Visualization and Monitoring | **Kibana** |
-| **Detection Engine** | Linux | Threat Detection and Alerting | **Elastic Security (SIEM)** |
+## 🧩 Components and Virtual Machines
+### 🖥️ **Virtual Machines (VMware Workstation):**
+| VM Name | Operating System | Role | 
+| :--- | :--- | :--- |
+| **Windows Target VM** | Windows Server | Victim system generating authentication logs |
+| **SIEM Server VM** | Ubuntu 22.04LTS | Centralized log ingestion, detection, alerting |
+| **Attacker VM** | Kali Linux | Brute-force attack simulation |
+
+### 🔧 **Tools and Roles per Component:**
+| Component | Tools/Services | Purpose |
+| :--- | :--- | :--- |
+| **Windows Target VM** | Windows Security Auditing | Generates failed logon events |
+| **Windows Target VM** | Event Viewer | Validates authentication failures | 
+| **Windows Target VM** | Winlogbeat / Elastic Agent | Forwards logs to SIEM | 
+| **SIEM Server VM** | Elasticsearch| Log storage and indexing | 
+| **SIEM Server VM** | Kibana (SIEM) | Alert visualization and investigation | 
+| **SIEM Server VM** | Detection Rules | Brute-force behavior detection | 
+| **Analyst System** | Web Browser | SOC monitoring | 
+
+### 🖧 **VMware Network Topology:**
+
+### 🏗️ **Architecture Flow Diagram:**
+
 
 ### ⚙️ **Detailed Setup Steps**
 1.  **Elastic Stack Deployment (Ubuntu 22.04 LTS):**
