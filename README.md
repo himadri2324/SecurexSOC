@@ -54,9 +54,8 @@ The project is implemented in a **VMware Workstation environment** and demonstra
 
 ### 🏗️ **Architecture Flow Diagram:**
 <p align="center">
-
-  ![image alt](https://github.com/himadri2324/Securex-soc/blob/main/Architecture-%20diagram.png?raw=true)
-
+  <img src="https://github.com/himadri2324/Securex-soc/blob/main/Architecture-%20diagram.png?raw=true" 
+       alt="Securex SOC Architecture Diagram" width="750"/>
 </p>
 
 
@@ -117,7 +116,7 @@ Upon triggering an alert:
 * **Implement SOAR-Based Account Lockout:** Integrating SOAR automation can automatically lock compromised accounts after repeated failed logins, reducing attacker dwell time and minimizing manual SOC intervention.
 * **Integrate Firewall or IP Blocking:** Firewall integration can enable automatic blocking of malicious source IP addresses detected during brute-force attempts, preventing further attack attempts at the network perimeter.
 * **Add Email or Messaging Alerts:** Configuring email or messaging notifications ensures SOC analysts receive immediate alerts, improving response time and enabling faster incident acknowledgment outside the SIEM console.
-* **xtend Detection to Successful Brute-Force Logins:** Detection logic can be enhanced to identify successful logins following multiple failures, indicating potential credential compromise and higher-risk security incidents.
+* **Extend Detection to Successful Brute-Force Logins:** Detection logic can be enhanced to identify successful logins following multiple failures, indicating potential credential compromise and higher-risk security incidents.
 
 ---
 ## 🔚 Conclusion
