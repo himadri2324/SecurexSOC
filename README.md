@@ -23,12 +23,12 @@ The project is implemented in a **VMware Workstation environment** and demonstra
 * Incident investigation
 
 ### 🎯 **Key Objectives:**
-* Simulate a real-world brute-force authentication attack
-* Enable and generate Windows authentication security logs
-* Forward logs to a centralized SIEM platform
-* Detect brute-force behavior using SIEM correlation rules
-* Generate real-time SOC alerts
-* Analyze incidents using dashboards and timelines 
+* **Simulate a real-world brute-force authentication attack:** This project simulates repeated failed login attempts to mimic real-world brute-force attacks, allowing SOC tools to analyze credential-guessing behavior in a controlled lab environment.
+* **Enable and generate Windows authentication security logs:** Windows Security Auditing is enabled to log authentication failures as Event ID 4625, capturing usernames, source IPs, timestamps, and failure reasons for accurate threat analysis.
+* **Forward logs to a centralized SIEM platform:** Winlogbeat or Elastic Agent forwards Windows security logs in real time to Elastic SIEM, ensuring centralized visibility, efficient log correlation, and scalable SOC-level monitoring.
+* **Detect brute-force behavior using SIEM correlation rules:** Elastic SIEM applies threshold-based detection rules to correlate multiple failed login attempts within a defined time window, identifying brute-force behavior beyond normal user login errors.
+* **Generate real-time SOC alerts:** When detection thresholds are met, the SIEM automatically generates real-time alerts containing severity, risk context, affected accounts, and timelines for rapid SOC decision-making.
+* **Analyze incidents using dashboards and timelines:** SOC analysts investigate alerts using Kibana dashboards and timelines to review correlated events, analyze attack patterns, and determine the scope and impact of the incident. 
 
 ---
 ## 🧩 Components and Virtual Machines
