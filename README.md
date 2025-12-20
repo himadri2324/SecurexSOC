@@ -50,7 +50,12 @@ The project is implemented in a **VMware Workstation environment** and demonstra
 | **SIEM Server VM** | Detection Rules | Brute-force behavior detection | 
 | **Analyst System** | Web Browser | SOC monitoring | 
 
-### 🖧 **VMware Network Topology:**
+### 🖧 **Network Architecture Diagram:**
+<p align="center">
+<img src="https://github.com/himadri2324/Securex-soc/blob/main/Network%20Architecture%20Diagram.png?raw=true"
+  alt="Securex Network Architecture Diagram" width="750"/>
+  </p>
+VMware-Based SOC Network Architecture Diagram
 
 ### 🏗️ **Architecture Flow Diagram:**
 <p align="center">
