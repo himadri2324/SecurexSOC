@@ -15,6 +15,16 @@ This project focuses on **detection, alerting, and analysis**, replicating how e
 
 ---
 
+## 📘 Related Medium Articles
+
+- 🛡️ **Securex: Real-time SOC Detection of Brute-Force Attacks**  
+https://medium.com/@himadrisingh061/detecting-brute-force-attacks-in-real-time-inside-a-soc-analysts-siem-workflow-a8dfea4f199c
+
+- ⚙️ **Step-by-Step ELK Stack Setup for SOC & SIEM Labs**  
+https://medium.com/@himadrisingh061/guide-installing-and-setting-up-elasticsearch-and-kibana-on-ubuntu-22-04-lts-0dffd1fa1b86
+
+---
+
 ## 📘 Project Overview
 Brute-force attacks are a common initial access technique used by attackers to compromise systems by repeatedly guessing credentials. Securex addresses this threat by monitoring **Windows Security Event Logs**, forwarding them to a centralized SIEM platform, and applying **behavior-based detection rules**.
 The project is implemented in a **VMware Workstation environment** and demonstrates an end-to-end SOC workflow including:
